@@ -15,7 +15,7 @@ volumes:[
       properties([
         disableConcurrentBuilds(),
         parameters([
-            booleanParam(name: 'param1', defaultValue: '', description: 'some parameter provided by outside party')
+            string(name: 'param1', defaultValue: 'abc', description: 'some parameter provided by outside party')
         ])
       ])
     try {         
@@ -25,8 +25,8 @@ volumes:[
 
           stage('Checkout') {
                   ansiColor('xterm') {
-                  println "Checkout the git repo"
-                  checkout scm
+                    println "Checkout the git repo"
+                    checkout scm
               }
           }
 
