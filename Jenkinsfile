@@ -33,7 +33,7 @@ volumes:[
           stage ('Print parameter provided by outside') {
             container('cntr') {    
               ansiColor('xterm') {
-                print "Parameter: ${param1}"
+                println "Parameter: ${params.param1}"
               }
             }
           }
