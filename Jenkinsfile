@@ -11,7 +11,7 @@ volumes:[
     hostPathVolume(mountPath: '/usr/bin/docker', hostPath: '/usr/bin/docker'),
 ]) {
 
-  node (podLabel) {
+  node (label) {
       properties([
         disableConcurrentBuilds(),
         parameters([
