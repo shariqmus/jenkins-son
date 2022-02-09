@@ -11,11 +11,13 @@ volumes:[
     hostPathVolume(mountPath: '/usr/bin/docker', hostPath: '/usr/bin/docker'),
 ]) {
 
-  node (label) {
-        properties([disableConcurrentBuilds()]),
+  node (podLabel) {
+      properties([
+        disableConcurrentBuilds(),
         parameters([
             booleanParam(name: 'param1', defaultValue: '', description: 'some parameter provided by outside party')
         ])
+      ])
     try {         
           stage ('Clean') {
               deleteDir()
